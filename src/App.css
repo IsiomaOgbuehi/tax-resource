@@ -1,38 +1,230 @@
-.App {
+*{
+  box-sizing: border-box;
+}
+
+nav{
+  width: 100%;
+  padding:20px;
+  box-shadow: 0 1px 3px #c7c7c7;
+}
+
+.container{
+  max-width: 1200px;
+  margin: auto;
+}
+
+.content-wrapper{
+  margin: 20px 0;
+  padding: 5px 20px;
+}
+
+.wrapper{
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 15px;
+}
+.custom-radio{
+  cursor: pointer;
+  margin: 0 5px 5px 0;
+}
+.custom-radio input[type=radio]{
+  opacity: 0;
+  /*visibility: hidden;*/
+  position: fixed;
+}
+.custom-radio input[type=radio]:checked ~ .category-label{
+  color: #fff;
+  background-color: #0f741b;
+  transition: all .5s ease-in-out;
+  font-weight: bold;
+}
+
+.category-label{
+  padding: 10px 20px;
+  border: 1px solid #0f741b;
+  border-radius: 25px;
+  color: #0f741b;
+  font-weight: bold;
+  display: inline-block;
+  width: max-content;
+}
+
+.item-label{
+  padding: 5px 20px;
+  border: 1px solid #c98e24;
+  border-radius: 15px;
+  color: #c98e24;
+  font-weight: bold;
+  display: inline-block;
+  width: max-content;
+}
+
+.custom-radio input[type=radio]:checked ~ .item-label{
+  color: #fff;
+  background-color: #c98e24;
+  transition: all .5s ease-in-out;
+  font-weight: bold;
+}
+
+.label-text{
+  display: block;
+  font-size: 14px;
+}
+
+.form-group{
+  width: 50%;
+  display: inline-block;
+}
+.form-group > input[type=text], input[type=number]{
+  width: 95%;
+}
+
+.form-group-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type=text], input[type=number]{
+  height: 40px;
+  padding: 0 4px;
+}
+
+input[type=text]:focus, input[type=number]:focus{
+  outline: none;
+
+}
+
+ul{
+  list-style-type: none;
+}
+
+.category-head{
+  padding: 10px 20px;
+  background-color: #eeeeee;
+}
+.category-head > label, .items > label, input + span {
+  margin-left: 10px;
+}
+
+.add-header{
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.rate-form, .search-form{
+  position: relative;
+}
+
+.rate-form > input{
+  padding-right: 25px;
+}
+
+.search-form > input{
+  padding-left: 25px;
+  width: 40%;
+}
+
+.rate-label{
+  position: absolute;
+  right: 20px;
+  top: 25%;
+}
+
+.search-label{
+  position: absolute;
+  left: 10px;
+  top: 15%;
+}
+
+.applied_to{
+  margin-left: 10px;
+}
+
+.radio-custom {
+  opacity: 0;
+  position: absolute;
+}
+
+.radio-custom, .radio-custom-label {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.radio-custom-label {
+  position: relative;
+}
+
+.radio-custom + .radio-custom-label:before {
+  content: '';
+  background: #fff;
+  border: 1px solid #ddd;
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  padding: 2px;
+  margin-right: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.radio-custom + .radio-custom-label:before {
+  border-radius: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.radio-custom:checked + .radio-custom-label:before {
+  content: "\2713";
+  color: #fff;
+  background-color: #df7445;
+  border: 1px solid #df7445;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-container{
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.checkbox-container{
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.btn-div{
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: end;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.btn{
+  background-color: #df7445;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: 1px solid #df7445;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: #df7445;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 1200px) {
+  .content-wrapper{
+    margin: 20px 0;
+    padding: 5px 0;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (min-width: 768px) {
+  .rate-form{
+    width: 20%;
+  }
+  .form-group-container{
+    justify-content: start;
   }
 }
